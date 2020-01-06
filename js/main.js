@@ -26,7 +26,6 @@
 	};
 
 	let fullHeight = function() {
-
 		if ( !isMobile.any() ) {
 			$('.js-fullheight').css('height', $(window).height());
 			$(window).resize(function(){
@@ -43,12 +42,10 @@
 		$('.animate-box').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-				
-				i++;
 
+				i++;
 				$(this.element).addClass('item-animate');
 				setTimeout(function(){
-
 					$('body .animate-box.item-animate').each(function(k){
 						let el = $(this);
 						setTimeout( function () {
@@ -62,25 +59,19 @@
 							} else {
 								el.addClass('fadeInUp animated');
 							}
-
 							el.removeClass('item-animate');
 						},  k * 200, 'easeInOutExpo' );
 					});
-					
 				}, 100);
-				
 			}
-
 		} , { offset: '85%' } );
 	};
 
 
 	let burgerMenu = function() {
-
 		$('.js-fh5co-nav-toggle').on('click', function(event){
 			event.preventDefault();
 			let $this = $(this);
-
 			if ($('body').hasClass('offcanvas')) {
 				$this.removeClass('active');
 				$('body').removeClass('offcanvas');	
@@ -89,41 +80,28 @@
 				$('body').addClass('offcanvas');	
 			}
 		});
-
-
-
 	};
 
 	// Click outside of offcanvass
 	let mobileMenuOutsideClick = function() {
-
 		$(document).click(function (e) {
 	    let container = $("#fh5co-aside, .js-fh5co-nav-toggle");
 	    if (!container.is(e.target) && container.has(e.target).length === 0) {
-
 	    	if ( $('body').hasClass('offcanvas') ) {
-
     			$('body').removeClass('offcanvas');
     			$('.js-fh5co-nav-toggle').removeClass('active');
-			
 	    	}
-	    	
 	    }
 		});
-
 		$(window).scroll(function(){
 			if ( $('body').hasClass('offcanvas') ) {
-
     			$('body').removeClass('offcanvas');
     			$('.js-fh5co-nav-toggle').removeClass('active');
-			
 	    	}
 		});
-
 	};
 
 	let sliderMain = function() {
-		
 	  	$('#fh5co-hero .flexslider').flexslider({
 			animation: "fade",
 			slideshowSpeed: 5000,
@@ -140,9 +118,7 @@
 					$('.flex-active-slide').find('.slider-text').addClass('animated fadeInUp');
 				}, 500);
 			}
-
-	  	});
-
+	  });
 	};
 
 	function sendEmail() {
@@ -159,6 +135,4 @@
 		sliderMain();
 		sendEmail();
 	});
-
-
 }());

@@ -53,4 +53,3 @@ https://github.com/mhuggins/jquery-countTo
 
 Google Map
 https://maps.google.com/
-
